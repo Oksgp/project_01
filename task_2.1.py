@@ -20,7 +20,7 @@ def minimum(arr):
             min = arr[i + 1]
     return min
 
-print(minimum([5, 11]))
+print(minimum())
 
 def maximum(arr):
     max = arr[0]
@@ -32,4 +32,4 @@ def maximum(arr):
             max = arr[i + 1]
     return max
 
-print(maximum([5, 11]))    
+print(maximum())    

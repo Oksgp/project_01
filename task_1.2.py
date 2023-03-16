@@ -18,7 +18,7 @@ my_favorite_songs = [
     ['In This World', 4.02],
 ]
 
-# Решение
+# Решение Вариант 1
 import random
 import datetime
 from math import *
@@ -30,6 +30,17 @@ if seconds > 60:
     minutes += 1
     seconds -= 60
 print('Три песни звучат', datetime.time(00, minutes, seconds).strftime('%M:%S'), 'минут')
+
+# Решение Вариант 2
+ 
+list_random = random.sample(my_favorite_songs, 3)
+list_random_time = (list_random[0][1] + list_random[1][1] + list_random[2][1])
+minutes_2 = int(floor(list_random_time))
+seconds_2 = int(list_random_time * 100 % 100) 
+if seconds_2 > 60:
+    minutes_2 += 1
+    seconds_2 -= 60
+print('Три песни звучат', datetime.time(00, minutes_2, seconds_2).strftime('%M:%S'), 'минут')
 
 
 # Пункт B. 
@@ -49,14 +60,15 @@ my_favorite_songs_dict = {
     'In This World': 4.02,
 }
 
+# Решение Вариант 1
 values_dict = list(my_favorite_songs_dict.values())
-time_sum = sum(random.sample(values_dict, k = 3))
-minutes_dict = int(floor(time_sum))
-seconds_dict = int(time_sum * 100 % 100)
-if seconds_dict > 60:
-    minutes_dict += 1
-    seconds_dict -= 60 
-print('Три песни звучат', datetime.time(00, minutes_dict, seconds_dict).strftime('%M:%S'), 'минут')
+#time_sum = sum(random.sample(values_dict, k = 3))
+#minutes_dict = int(floor(time_sum))
+#seconds_dict = int(time_sum * 100 % 100)
+#if seconds_dict > 60:
+#    minutes_dict += 1
+#    seconds_dict -= 60 
+#print('Три песни звучат', datetime.time(00, minutes_dict, seconds_dict).strftime('%M:%S'), 'минут')
 
 
 

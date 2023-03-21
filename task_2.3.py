@@ -20,7 +20,7 @@ def switch_it_up(number):
         [8, 'Eight'],
         [9, 'Nine'],
     ]
-    while number >= 1 and number <= 9:
+    while number >= 0 and number <= 9:
         return(number_list[number][1])
 
 print(switch_it_up(11))

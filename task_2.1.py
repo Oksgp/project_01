@@ -11,25 +11,21 @@
 # функции max и min использовать нельзя!
 
 def minimum(arr):
-    min = arr[0]
-    i = 0
-    for i in range(len(arr) - 1):
-        if len(arr) == 1:
-            min = arr[0]
-        elif arr[i + 1] <= arr[i]:
-            min = arr[i + 1]
-    return min
+  n = len(arr)
+  for i in range(n-1):
+    for j in range(n-i-1):
+      if arr[j] > arr[j+1]:
+        arr[j], arr[j+1] = arr[j+1], arr[j]
+  return arr[0]
 
-print(minimum())
+print(minimum([-52, 56, 30, 29, -54, 0, -110]))
 
 def maximum(arr):
-    max = arr[0]
-    i = 0
-    for i in range(len(arr) - 1):
-        if len(arr) == 1:
-            max = arr[0]
-        elif arr[i + 1] >= arr[i]:
-            max = arr[i + 1]
-    return max
+  n = len(arr)
+  for i in range(n-1):
+    for j in range(n-i-1):
+      if arr[j] > arr[j+1]:
+        arr[j], arr[j+1] = arr[j+1], arr[j]
+  return arr[-1]
 
-print(maximum())    
+print(maximum([-52, 56, 30, 29, -54, 0, -110]))    
